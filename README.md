@@ -17,7 +17,7 @@ Simple example of 'how to use props and state with eventHandler'
 ## Class type Component vs Functional Component
 - Class type Component: normal case when component needs state, props, eventHandler, or LifeCylceAPI
 <p align="center">
-  <img width="60%" src="./src/image/classTypeComponentImg.png">
+  <img width="50%" src="./src/image/classTypeComponentImg.png">
 </p>
 
 - Functional Component: use when component is made only for shows props
