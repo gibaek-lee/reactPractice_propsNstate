@@ -3,19 +3,19 @@ Simple example of 'how to use props and state with eventHandler'
 
 ## Characteristic
 - props<br>
-1.Variable that parent component send to child component<br>
-2.(Static data)Child component cannot modify props directly but just take it<br>
-3.Contact to variable via 'this.props'<br>
+1. Variable that parent component send to child component<br>
+2. (Static data)Child component cannot modify props directly but just take it<br>
+3. Contact to variables via 'this.props'<br>
 
 - state<br>
-1.Define it inside of component, locally<br>
-2.(Dynamic data)Can change it inside component<br>
-3.classfiels: state can changed inside this.setState<br>
-4.Component is rerendered when this.setState is called<br>
-5.Only can update state with 'this.setState' only when variable is ojbect type.
+1. Define it inside of component, locally<br>
+2. (Dynamic data)Can change it inside the component<br>
+3. classfiels: state can changed inside this.setState<br>
+4. Component is rerendered when this.setState is called<br>
+5. Only can update state with 'this.setState' only when a variable is an ojbect type.
 
 ## Class type Component vs Functional Component
-- Class type Component: normal case when component needs state, props, eventHandler, or LifeCylceAPI
+- Class type Component: normal case when a component needs to use state, props, eventHandler, or LifeCylceAPI
 <p align="center">
   <img width="50%" src="./src/image/classTypeComponentImg.png">
 </p>
