@@ -1,7 +1,9 @@
-# React Practice(props and state)
-Simple example of 'how to use props and state with eventHandler'
+# React Practice(props and state, LifeCycle API, error handling)
+- Simple example of 'how to use props and state with eventHandler'
+- Sequence of component LifeCycle API with console.log
+- Child component error catch via componentDidCatch API
 
-## Characteristic
+## Characteristic of props and state
 - props<br>
 1. Variable that parent component send to child component<br>
 2. (Static data)Child component cannot modify props directly but just take it<br>
@@ -14,7 +16,25 @@ Simple example of 'how to use props and state with eventHandler'
 4. Component is rerendered when this.setState is called<br>
 5. Only can update state with 'this.setState' only when a variable is an ojbect type.
 
-## Class type Component vs Functional Component
+## LifeCycle API
+- Generation sequence of component LifeCycle API<br>
+<p align="center">
+  <img width="70%" src="./src/image/reactComponentLifeCycleAPI.png">
+</p>
+
+- console log of initial generation and plus button action<br>
+<p align="center">
+  <img width="60%" src="./src/image/LifeCycleAPIconsoleLog.png">
+</p>
+
+## error handling
+ - Component cannot catch an error of itself, but can only when error is generated from child component.
+ - API: componentDidCatch(err, info)<br>
+ <p align="center">
+  <img width="60%" src="./src/image/errorCatch.png">
+</p>
+
+## (ref)Class type Component vs Functional Component
 - Class type Component: normal case when a component needs to use state, props, eventHandler, or LifeCylceAPI
 <p align="center">
   <img width="50%" src="./src/image/classTypeComponentImg.png">
