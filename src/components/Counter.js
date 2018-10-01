@@ -12,7 +12,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
   //변수
   state = {
-    number: 0
+    number: 0,
+    error: false
   }
 
   //LifeCycle API
@@ -124,6 +125,22 @@ class Counter extends Component {
   }
   */
 
+  //자식컴포넌트 에러 캐치
+  componentDidCatch(err, info){
+    this.setState({
+      error: true
+    });
+    /*
+    주요 에러발생 원인
+    1. props로 올 줄 알았던 함수가 존재하지 않을 때
+    2. props로 올 줄 알았던 배열이나 객체가 존재하지 않을 때
+    해결책
+    1. defaultProps에 initialize
+    2. 1번으로도 놓친 버그는 componentDidCatch로 잡는다.
+    3. 필요시 에러 로그를 서버에 남긴다.
+    */
+  }
+
   //렌더
   /* 주의
   1.이벤트 이름은 carmelCase로 작성한다(onClick).
@@ -131,15 +148,28 @@ class Counter extends Component {
   */
   render(){
     console.log('*render()');
+
+    if(this.state.error) return (<h1>Error!</h1>);
+
     return (
       <div>
         <h2>카운터</h2>
         <div>number: {this.state.number}</div>
+        {this.state.number === 4 && <Problematic />}
         <button name="plus" onClick={this.handlePlusButton}>+</button>
         <button name="minus" onClick={this.handleMinusButton}>-</button>
       </div>
     );
   }
 }
+
+const Problematic = () => {
+  throw (new Error('bugs are occured!'));
+  return (
+    <div>
+
+    </div>
+  );
+};
 
 export default Counter;
