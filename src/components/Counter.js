@@ -125,7 +125,7 @@ class Counter extends Component {
   }
   */
 
-  //자식컴포넌트 에러 캐치
+  //자식컴포넌트 에러 캐치(자신의 에러는 캐치할 수 없다)
   componentDidCatch(err, info){
     this.setState({
       error: true
